@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(120deg, #0a192f, #112240);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 60px 80px;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 
+        0 15px 25px rgba(0,0,0,0.2),
+        inset 0 0 20px rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.relogio {
+    position: relative;
+}
+
+.display {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.segmento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.numero {
+    color: #64ffda;
+    font-size: 80px;
+    font-weight: 600;
+    text-shadow: 0 0 20px rgba(100, 255, 218, 0.5);
+    min-width: 100px;
+    text-align: center;
+}
+
+.legenda {
+    color: #8892b0;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+.separador {
+    color: #64ffda;
+    font-size: 60px;
+    animation: piscar 1s infinite;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.data {
+    color: #8892b0;
+    font-size: 18px;
+    text-align: center;
+    margin-top: 30px;
+    letter-spacing: 1px;
+}
+
+@keyframes piscar {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* Efeito de hover */
+.container:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        padding: 30px 40px;
+    }
+
+    .numero {
+        font-size: 50px;
+        min-width: 60px;
+    }
+
+    .legenda {
+        font-size: 12px;
+    }
+
+    .separador {
+        font-size: 40px;
+    }
+}
